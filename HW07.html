@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW07</title>
+    <style>
+        h1 {
+            border-radius: 10px;
+            background-color: rgb(238, 232, 144);
+            font-weight: normal;
+            font-family: '標楷體';
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script>
+        var BMI = {};
+        BMI.getBMI = function(a, b) {
+            var bmi = b / ((a / 100) * (a / 100));
+            return bmi;
+        };
+
+        function Cal(form) {
+            var a = eval(form.height.value);
+            var b = eval(form.weight.value);
+            var bmi = eval(form.BMI.value);
+            var bmiValue = BMI.getBMI(a, b);
+            BMI.disp_alert(bmiValue);
+            form.IW.value = BMI.idealweight(a);
+            form.BMI.value = bmiValue;
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">這是網頁作業區</h1>
+    <style>
+        p {
+            background-color: rgb(255, 0, 0);
+            font-weight: normal;
+            font-family: '標楷體';
+        }
+    </style>
+    <div style="text-align: center;border-radius:10px;border:2px rgb(38, 0, 255) solid;">基本個人資料表列</div>
+    <div style="text-align: center;border-radius:10px;border:2px rgb(38, 0, 255);">
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px rgb(0, 255, 221) solid;width:49.5%;display: inline-block;">學號</span>
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px rgb(0, 255, 221) solid;width:49%;display: inline-block;">1064410</span>
+
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px rgb(0, 255, 34) solid;width:49.5%;display: inline-block;">姓名</span>
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px rgb(0, 255, 34) solid;width:49%;display: inline-block;">陳乃宇</span>
+
+    </div>
+    <br>
+    <br>
+    <div style="text-align: center;border-radius:10px;border:2px red solid;">作業表列</div>
+    <div style="text-align: center;border-radius:10px;border:2px blue solid;">
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px rgb(0, 255, 221) solid;width:49.5%;display: inline-block;">Deadline</span>
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px rgb(0, 255, 221) solid;width:49.5%;display: inline-block;">2021/0323</span>
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px rgb(0, 255, 34) solid;width:49.5%;display: inline-block;">作業編號</span>
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px rgb(0, 255, 34) solid;width:49.5%;display: inline-block;">HW01</span>
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px blue solid;width:49.5%;display: inline-block;">作業主要練習議題</span>
+        <span style="box-shadow:3px 3px 5px 6px #cccccc;text-align: center;border-radius:10px;border:2px blue solid;width:49.5%;display: inline-block;">練習平台線上作業</span>
+    </div>
+    <br><br>
+    <h1 style="text-align: center;">BMI計算</h1>
+    <style>
+        p {
+            background-color: rgb(255, 0, 0);
+            font-weight: normal;
+            font-family: '標楷體';
+        }
+    </style>
+    <h4 style="text-align: center;">請分別輸入身高(cm)、體重(kg)</h4>
+    <br>
+    <form method=post>
+        你的身高(cm):<input type="text" name="height"><br>
+        <br/> 你的體重(kg):
+        <input type="text" name="weight"><br>
+        <br/>
+        <input type="button" value="開始計算" onclick="Cal(this.form)">
+        <br/><br> 您的BMI:
+        <output name="bmi" for="height weight"></output>
+    </form>
+
+
+</body>
+
+</html>
